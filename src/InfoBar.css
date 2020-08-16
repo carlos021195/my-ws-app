@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    max-height: 5%;
+}
+.infoBar{
+    background-color: crimson;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user p{
+    padding-left: 5px;
+}
+.infoBar img{
+    max-height: 25px;
+}
+.connected-icon{
+    height: 10px;
+}

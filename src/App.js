@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
+import Chat from './Chat'
+import Join from './Join'
+
 
 function App() {
+  const [username,setUsername] = useState('')
+  const [enterRoom, setEnterRoom] = useState('')
+  const [state, setState] = useState(true);
+
+  const handleChangeUser = (e) => {
+    setUsername(e.target.value)
+  }
+  const handleChangeRoom = (e) => {
+    setEnterRoom(e.target.value)
+  }
+
+  const join = () => {
+    if(username!==''&&enterRoom!=='') setState(false);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    state
+    ?<Join username = {username} enterRoom = {enterRoom} handleChangeUser = {handleChangeUser} handleChangeRoom = {handleChangeRoom} join = {join}/>
+    :<Chat username={username} enterRoom = {enterRoom}/>
   );
 }
 

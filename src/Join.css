@@ -1,0 +1,30 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+.join{
+    width: 100vw;
+    height: 100vh;
+    background-color: #242F40;
+    color: #d5d5d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.joinInnerContainer{
+    text-align: center;
+    font-size: 35px;
+}
+.joinInput{
+    width: 250px;
+}
+.joinButton{
+    width: 75px;
+    height: 30px;
+    background-color: #d5d5d8;
+    color: black;
+}
