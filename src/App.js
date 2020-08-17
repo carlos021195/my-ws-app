@@ -15,14 +15,16 @@ function App() {
   const handleChangeRoom = (e) => {
     setEnterRoom(e.target.value)
   }
-
+  const goHome = () => {
+    setState(true)
+  }
   const join = () => {
     if(username!==''&&enterRoom!=='') setState(false);
   }
   return (
     state
     ?<Join username = {username} enterRoom = {enterRoom} handleChangeUser = {handleChangeUser} handleChangeRoom = {handleChangeRoom} join = {join}/>
-    :<Chat username={username} enterRoom = {enterRoom}/>
+    :<Chat username={username} enterRoom = {enterRoom} goHome = {goHome}/>
   );
 }
 

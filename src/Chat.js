@@ -6,7 +6,7 @@ import InfoBar from './InfoBar'
 
 const ws = new WebSocket('ws://localhost:3030');
 
-function Chat({username, enterRoom}) {
+function Chat({username, enterRoom, goHome}) {
   const [user,setUser] = useState(username)
   const [room,setRoom] = useState(enterRoom)
   const [messageArr,setMessages] = useState([{room: room, user: 'chatbot',text: 'Welcome to the chat'}]);
@@ -44,7 +44,7 @@ function Chat({username, enterRoom}) {
 
   return (
     <div className="chat">
-      <InfoBar user = {user} room = {room}/>
+      <InfoBar user = {user} room = {room} goHome = {goHome}/>
       <MessageList user = {user} messageArr = {messageArr}/>
       <MessageInput sendMessage = {sendMessage} handleChange = {handleChange} message = {message}/>
       {/* {messageArr.map((message,index) => <li key = {index}>{message.text}</li>)}
