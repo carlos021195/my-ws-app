@@ -1,7 +1,7 @@
 import React from 'react'
 import './InfoBar.css'
 
-export default function InfoBar({user, room}){
+export default function InfoBar({user, room, goHome}){
     return(
         <div className = 'infoBar'>
             <div className = 'user'>
@@ -9,7 +9,7 @@ export default function InfoBar({user, room}){
                 <p>{user}</p>
             </div>
             <p className = 'roomName'>{room}</p>
-            <a href ="#"><img className = "homeIcon" src="https://img.icons8.com/ios-filled/50/000000/home.png"/></a>
+            <a href ="#" onClick = {goHome}><img className = "homeIcon" src="https://img.icons8.com/ios-filled/50/000000/home.png"/></a>
         </div>
     )
 }
