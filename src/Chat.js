@@ -30,10 +30,11 @@ function Chat({username, enterRoom}) {
   }
   
   const sendMessage = () => {
-    // ws.send(JSON.stringify({"room": "this", "user": "admin","text":"testing"}));
-    ws.send(JSON.stringify({"room": room, "user": user,"text":message}));
-    setMessage('')
-    console.log('message sent')
+    if(message!==''){
+      ws.send(JSON.stringify({"room": room, "user": user,"text":message}));
+      setMessage('')
+      console.log('message sent')
+    }
   }
 
   function handleChange(e){
@@ -43,7 +44,7 @@ function Chat({username, enterRoom}) {
 
   return (
     <div className="chat">
-      <InfoBar />
+      <InfoBar user = {user} room = {room}/>
       <MessageList user = {user} messageArr = {messageArr}/>
       <MessageInput sendMessage = {sendMessage} handleChange = {handleChange} message = {message}/>
       {/* {messageArr.map((message,index) => <li key = {index}>{message.text}</li>)}

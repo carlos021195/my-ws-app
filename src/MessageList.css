@@ -1,3 +1,12 @@
+
 .messageListContainer{
-    height: 95%;
+    height: 90%;
+    overflow-y: scroll;
+    width: 100%;
+}
+.messageContainer{
+    display: inline-block
+}
+.message-wrap{
+    padding: 5px;
 }
