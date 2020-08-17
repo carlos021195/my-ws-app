@@ -4,7 +4,7 @@ import MessageList from './MessageList'
 import MessageInput from './MessageInput'
 import InfoBar from './InfoBar'
 
-const ws = new WebSocket('https://my-ws-app.herokuapp.com/');
+const ws = new WebSocket('ws://my-ws-app.herokuapp.com/');
 
 function Chat({username, enterRoom, goHome}) {
   const [user,setUser] = useState(username)
