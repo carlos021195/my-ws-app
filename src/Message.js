@@ -5,7 +5,7 @@ export default function Message({user , message}){
     return(
         
         message.user === user?
-        <div className = "sentMessage">{message.user}: {message.text}</div>
-        :<div className = "receivedMessage">{message.user}: {message.text}</div>
+        <div className = "message sentMessage"><div className = "outer-sent-message"><p>{message.user}: {message.text}</p></div></div>
+        :<div className = "message receivedMessage"><div className = "outer-received-message"><p>{message.user}: {message.text}</p></div></div>
     )
 }
