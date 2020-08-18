@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/my-ws-app/static/css/main.ae7236f4.chunk.css",
+    "main.css": "/my-ws-app/static/css/main.4abede54.chunk.css",
     "main.js": "/my-ws-app/static/js/main.6d837eef.chunk.js",
     "main.js.map": "/my-ws-app/static/js/main.6d837eef.chunk.js.map",
     "runtime-main.js": "/my-ws-app/static/js/runtime-main.1591f679.js",
@@ -8,15 +8,15 @@
     "static/js/2.6193661d.chunk.js": "/my-ws-app/static/js/2.6193661d.chunk.js",
     "static/js/2.6193661d.chunk.js.map": "/my-ws-app/static/js/2.6193661d.chunk.js.map",
     "index.html": "/my-ws-app/index.html",
-    "precache-manifest.7538d74850c3c06e106140c0c131cf43.js": "/my-ws-app/precache-manifest.7538d74850c3c06e106140c0c131cf43.js",
+    "precache-manifest.8d74694557a4820ddd27a39619673df7.js": "/my-ws-app/precache-manifest.8d74694557a4820ddd27a39619673df7.js",
     "service-worker.js": "/my-ws-app/service-worker.js",
-    "static/css/main.ae7236f4.chunk.css.map": "/my-ws-app/static/css/main.ae7236f4.chunk.css.map",
+    "static/css/main.4abede54.chunk.css.map": "/my-ws-app/static/css/main.4abede54.chunk.css.map",
     "static/js/2.6193661d.chunk.js.LICENSE.txt": "/my-ws-app/static/js/2.6193661d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1591f679.js",
     "static/js/2.6193661d.chunk.js",
-    "static/css/main.ae7236f4.chunk.css",
+    "static/css/main.4abede54.chunk.css",
     "static/js/main.6d837eef.chunk.js"
   ]
 }
