@@ -14,14 +14,6 @@ function Chat({username, enterRoom, goHome}) {
   const [messageArr,setMessages] = useState([{room: room, user: 'chatbot',text: 'Welcome to the chat'}]);
   const [message, setMessage] = useState('');
 
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-  window.addEventListener('resize', () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  });
-
   ws.onopen = () => { 
     console.log('Now connected')
   };
