@@ -3,6 +3,7 @@ import './Chat.css';
 import MessageList from './MessageList'
 import MessageInput from './MessageInput'
 import InfoBar from './InfoBar'
+import $ from 'jquery'
 
 const ws = new WebSocket('wss://my-ws-app.herokuapp.com/');
 
@@ -25,6 +26,7 @@ function Chat({username, enterRoom, goHome}) {
     console.log(message.room)
     if(message.room === room){
         setMessages([...messageArr,message]);
+        $("#messageList").scrollTop($("#messageList")[0].scrollHeight);
     }
     
   }
