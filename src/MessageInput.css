@@ -2,10 +2,12 @@
     height: 5%;
     width: 100%;
     background-color: whitesmoke;
+    position: fixed;
+    bottom: 0;
 }
 .inputBar{
-width: 85%;
-height: 100%
+    width: 85%;
+    height: 100%
 }
 .sendButton{
     width: 15%;
