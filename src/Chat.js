@@ -7,11 +7,20 @@ import $ from 'jquery'
 
 const ws = new WebSocket('wss://my-ws-app.herokuapp.com/');
 
+
 function Chat({username, enterRoom, goHome}) {
   const [user,setUser] = useState(username)
   const [room,setRoom] = useState(enterRoom)
   const [messageArr,setMessages] = useState([{room: room, user: 'chatbot',text: 'Welcome to the chat'}]);
   const [message, setMessage] = useState('');
+
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
 
   ws.onopen = () => { 
     console.log('Now connected')
