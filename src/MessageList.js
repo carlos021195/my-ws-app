@@ -4,7 +4,7 @@ import './MessageList.css'
 
 export default function MessageList({user, messageArr}){
     return(
-        <div className = "messageListContainer">
+        <div className = "messageListContainer" id = "messageList">
             {messageArr.map((message,index) =>{
 
                 return <div className = "message-wrap" key = {index}><Message user = {user} message = {message}/></div>
