@@ -3,52 +3,19 @@ import './Chat.css';
 import MessageList from './MessageList'
 import MessageInput from './MessageInput'
 import InfoBar from './InfoBar'
-import $ from 'jquery'
-
-const ws = new WebSocket('wss://my-ws-app.herokuapp.com/');
 
 
-function Chat({username, enterRoom, goHome}) {
-  const [user,setUser] = useState(username)
-  const [room,setRoom] = useState(enterRoom)
-  const [messageArr,setMessages] = useState([{room: room, user: 'chatbot',text: 'Welcome to the chat'}]);
-  const [message, setMessage] = useState('');
 
-  ws.onopen = () => { 
-    console.log('Now connected')
-  };
-  
-  ws.onmessage = (event) => {
-    console.log(event.data)
-    console.log(JSON.parse(event.data))
-    console.log(messageArr)
-    const json = JSON.parse(event.data);
-    const message =JSON.parse(json)
-    console.log(message.room)
-    if(message.room === room){
-        setMessages([...messageArr,message]);
-        $("#messageList").scrollTop($("#messageList")[0].scrollHeight);
-    }
-    
-  }
-  
-  const sendMessage = () => {
-    if(message!==''){
-      ws.send(JSON.stringify({"room": room, "user": user,"text":message}));
-      setMessage('')
-      console.log('message sent')
-    }
-  }
 
-  function handleChange(e){
-    setMessage(e.target.value);
-  }
+
+function Chat({user, room, messageArr, message, goHome, sendMessage, handleChange, connect}) {
+
 
 
   return (
     <div className="chat">
-      <InfoBar user = {user} room = {room} goHome = {goHome}/>
-      <MessageList user = {user} messageArr = {messageArr}/>
+      <InfoBar user = {user} room = {room} goHome = {goHome} connect = {connect}/>
+      <MessageList user = {user} messageArr = {messageArr} room = {room}/>
       <MessageInput sendMessage = {sendMessage} handleChange = {handleChange} message = {message}/>
       {/* {messageArr.map((message,index) => <li key = {index}>{message.text}</li>)}
       <button onClick = {sendMessage}>test</button> */}

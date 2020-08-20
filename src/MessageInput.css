@@ -2,7 +2,7 @@
     height: 5%;
     width: 100%;
     background-color: whitesmoke;
-    position: fixed;
+    position: sticky;
     bottom: 0;
 }
 .inputBar{

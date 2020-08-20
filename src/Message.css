@@ -8,7 +8,7 @@
     background-color: lightgrey;
     border: whitesmoke 1px groove;
     display: inline-block;
-    text-align: right;
+    text-align: left;
     padding: 5px;
     max-width: 75%;
 }
@@ -23,7 +23,7 @@
 .sentMessage{
     display: flex;
     justify-content: flex-end;
-    text-align: right;
+    text-align: left;
 }
 .receivedMessage{
     display: flex;
