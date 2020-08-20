@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './Join.css'
 
-export default function Join({username, enterRoom, handleChangeUser, handleChangeRoom, join}){
+export default function Join({user, room, handleChangeUser, handleChangeRoom, join, connect}){
     
     return(
         <div className = "join">
@@ -10,7 +10,7 @@ export default function Join({username, enterRoom, handleChangeUser, handleChang
                 <input 
                 className = "joinInput"
                 type = "text"
-                value = {username} 
+                value = {user} 
                 onChange = {handleChangeUser}
                 onKeyPress = {(event) => event.key === 'Enter'?join():null}
                 placeholder = "username"/>
@@ -18,12 +18,17 @@ export default function Join({username, enterRoom, handleChangeUser, handleChang
                 <input 
                 className = "joinInput"
                 type = "text"
-                value = {enterRoom}
+                value = {room}
                 onChange = {handleChangeRoom}
                 onKeyPress = {(event) => event.key === 'Enter'?join():null}
                 placeholder = "room"/>
                 <br />
                 <button className = "joinButton" onClick = {join} >Enter Chat</button>
+                {
+                    !connect
+                    ?<div id = "connecting" className = "connecting">Connecting...</div>
+                    :<div id = "connecting" className = "connecting"></div>
+                }
             </div>
         </div>
     )
