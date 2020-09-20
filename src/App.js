@@ -11,7 +11,7 @@ const ws = new WebSocket('wss://my-ws-app.herokuapp.com/');
 function App() {
   const [user,setUser] = useState('')
   const [room,setRoom] = useState('')
-  const [messageArr,setMessages] = useState([{room: room, user: 'chatbot',text: 'Welcome to the chat'}]);
+  const [messageArr,setMessages] = useState([{room: 'everywhere', user: 'chatbot',text: 'Welcome to the chat'}]);
   const [message, setMessage] = useState('');
   const [state, setState] = useState(true);
   const [connect, setConnect] = useState(false);

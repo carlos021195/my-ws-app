@@ -4,14 +4,7 @@ import MessageList from './MessageList'
 import MessageInput from './MessageInput'
 import InfoBar from './InfoBar'
 
-
-
-
-
 function Chat({user, room, messageArr, message, goHome, sendMessage, handleChange, connect}) {
-
-
-
   return (
     <div className="chat">
       <InfoBar user = {user} room = {room} goHome = {goHome} connect = {connect}/>
