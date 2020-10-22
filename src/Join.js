@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './Join.css'
 
 export default function Join({user, room, handleChangeUser, handleChangeRoom, join, connect}){
