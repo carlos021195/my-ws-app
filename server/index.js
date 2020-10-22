@@ -3,8 +3,8 @@ const path = require('path');
 const WebSocket = require('ws'); // new
 const app = express();
 
-const socketServer = new WebSocket.Server({port: process.env.PORT || 3000});
-
+const socketServer = new WebSocket.Server({port: process.env.PORT || 5000});
+var users = [];
 socketServer.on('connection', (socketClient) => {
   console.log('connected');
   console.log('client Set length: ', socketServer.clients.size);
@@ -12,6 +12,7 @@ socketServer.on('connection', (socketClient) => {
 
 
   socketClient.on('message', message => {
+    console.log(message);
       socketServer.clients.forEach((client) => {
           if(client.readyState === WebSocket.OPEN){
               client.send(JSON.stringify(message))

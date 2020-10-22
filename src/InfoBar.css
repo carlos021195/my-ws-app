@@ -11,6 +11,7 @@
     color: whitesmoke;
     position: sticky;
     top: 0;
+    border: 2px solid whitesmoke;
 }
 .user{
     display: flex;
@@ -29,4 +30,26 @@
 }
 .connected-icon{
     height: 10px;
+}
+.menuArrow{
+    padding: 0 10px;
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+    transition: transform .5s;
+    cursor: pointer;
+    font-size: x-large;
+}
+.bar{
+    width: 25px;
+    height: 2px;
+    margin:4px 0;
+    background-color: whitesmoke;
+}
+@media screen and (min-width: 1021px){
+    .hamburger{
+        display: none;
+    }
+    .menuArrow{
+        display: none;
+    }
 }

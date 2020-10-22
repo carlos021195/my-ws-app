@@ -3,10 +3,14 @@ import './App.css';
 import Chat from './Chat'
 import Join from './Join'
 import $ from 'jquery'
-import notConnected from './not-connected.png'
-import connected from './connected.png'
 
+//Updates Needed:
+//fix arrow to show rooms
+
+//Uncomment for real node server
 const ws = new WebSocket('wss://my-ws-app.herokuapp.com/');
+//uncomment for local testing
+// const ws = new WebSocket('ws://localhost:5000');
 
 function App() {
   const [user,setUser] = useState('')
@@ -15,6 +19,7 @@ function App() {
   const [message, setMessage] = useState('');
   const [state, setState] = useState(true);
   const [connect, setConnect] = useState(false);
+  const [roomsList, setRoomsList] = useState(['general']);
 
   ws.onopen = () => { 
     console.log('Now connected')
@@ -39,7 +44,8 @@ function App() {
     if(message!==''){
       ws.send(JSON.stringify({"room": room, "user": user,"text":message}));
       setMessage('')
-      console.log(connect)
+      console.log(connect);
+      console.log(room);
     }
   }
   function handleChange(e){
@@ -54,8 +60,17 @@ function App() {
   const goHome = () => {
     setState(true)
   }
+  const switchChannel = (e) => {
+    setRoom(e.target.value);
+  }
   const join = () => {
-    if(user!==''&&room!=='') setState(false);
+    if(user!==''&&room!==''){
+      if(!roomsList.includes(room)){
+        setRoomsList([...roomsList,room]);
+      }
+      setState(false);
+      console.log(roomsList,room);
+    }
   }
   const connectingTooLong = () => {
     let interval = setInterval(() => {
@@ -72,7 +87,7 @@ function App() {
         state
         ?<Join user = {user} room = {room} handleChangeUser = {handleChangeUser} handleChangeRoom = {handleChangeRoom} join = {join} connect = {connect}/>
         :connect
-        ?<Chat user={user} room = {room} messageArr = {messageArr} message = {message} goHome = {goHome} sendMessage = {sendMessage} handleChange = {handleChange} connect = {connect}/>
+        ?<Chat user={user} room = {room} messageArr = {messageArr} message = {message} goHome = {goHome} sendMessage = {sendMessage} handleChange = {handleChange} connect = {connect} roomsList = {roomsList} switchChannel={switchChannel}/>
         :<Join user = {user} room = {room} handleChangeUser = {handleChangeUser} handleChangeRoom = {handleChangeRoom} join = {join} connect = {connect}/>
       }
     </div>
