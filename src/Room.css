@@ -1,0 +1,46 @@
+.rooms-container{
+    height: 95vh;
+    border-width: 0 2px 2px 2px;
+    border-color: whitesmoke;
+    border-style: solid;
+}
+.clickableRoom{
+    width:100%;
+
+}
+.roomButton{
+    width: 100%;
+    color:whitesmoke;
+    background-color: unset;
+    height: 30px;
+    font-size: large;
+    margin: 5px 0px;
+}
+.roomsHeader{
+    color: whitesmoke;
+}
+.verticalCenter{
+    height: 95%;
+    width: 100%;
+    display:flex;
+    align-items: center;
+}
+.verticalCenter li, .verticalCenter ul{
+    width: 100%;
+}
+@media screen and (max-width: 1020px){
+    .roomsContainer{
+        display: none;
+    }
+    main{
+        display: unset;
+    }
+    .roomsContainer{
+        position: fixed;
+        width: 45vw;
+        left:0;
+    }
+    .show{
+        display: unset;
+    }
+}
